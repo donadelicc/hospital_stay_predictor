@@ -1,8 +1,10 @@
-### Hospital Stay Length Prediction App 
+# Hospital Stay Length Prediction App 
 Overview
 This is a machine learning application that predicts the length of a patient's hospital stay. The app is built using Gradio for the user interface and Scikit-learn for the predictive model. It's designed to assist healthcare professionals in optimizing hospital resource management and improving patient care.
 
 App Screenshot
+
+
 
 Features
 Predicts the length of hospital stay based on key patient metrics.
@@ -15,16 +17,16 @@ Gradio
 Scikit-learn
 bash
 Copy code
-# Clone the repository
+## Clone the repository
 git clone https://github.com/YourUsername/HospitalStayPrediction.git
 
-# Navigate into the project directory
+## Navigate into the project directory
 cd HospitalStayPrediction
 
-# Install the required packages
+## Install the required packages
 pip install -r requirements.txt
 
-# Run the application
+## Run the application
 python app.py
 Usage
 Open the application.
