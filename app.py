@@ -7,7 +7,6 @@ import pandas as pd
 
 ## test
 
-
 with open('hospitalStay.pkl', 'rb') as f:
     model = pickle.load(f)
 
@@ -42,9 +41,9 @@ default_values = {
 
 def predict_length_of_stay(rcount, gender, asthma, hematocrit, bmi):
     
-    # Konverterer input verdier fra Gradio input
+    # Convert input values from Gradio input
     if rcount < 0 or rcount > 5:
-            return "Ugylding verdig for Antall innleggelser. Bruk et tall mellom 0 og 5"
+            return "Invalid value for Number of Admissions. Use a number between 0 and 5"
     gender = 1.0 if gender == "Male" else 0.0
     
     input_values = default_values.copy()
@@ -58,17 +57,17 @@ def predict_length_of_stay(rcount, gender, asthma, hematocrit, bmi):
     
     df = pd.DataFrame([input_values])
     
-    prediction = model.predict(df) 
-    rounded_prediction = math.ceil(prediction[0])  
+    prediction = model.predict(df)
+    rounded_prediction = math.ceil(prediction[0])
     return rounded_prediction
 
 
 iface = gr.Interface(
     fn=predict_length_of_stay,
-    title="Beregn lengden på et sykehusopphold til en pasient.",
-    description="Modellen tar inn 25 variabler for å predikere lengden på sykehusoppholdet, men jeg har begreset denne demoen til å bare inneholde 5 input verdier.",
+    title="Calculate the length of a patient's hospital stay.",
+    description="The model takes in 25 variables to predict the length of a hospital stay, but I have limited this demo to only include 5 input values.",
     inputs=[
-        gr.components.Number(label="Antall innleggelser de siste 180 dager", default=0.0),
+        gr.components.Number(label="Number of Admissions in the Last 180 Days", default=0.0),
         gr.components.Dropdown(choices=["Male", "Female"], label="Gender", default="Male"),
         gr.components.Checkbox(label="Asthma", default=False),
         gr.components.Number(label="Hematocrit", default=11.9),
