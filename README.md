@@ -2,7 +2,9 @@
 Overview
 This is a machine learning application that predicts the length of a patient's hospital stay. The app is built using Gradio for the user interface and Scikit-learn for the predictive model. It's designed to assist healthcare professionals in optimizing hospital resource management and improving patient care.
 
-App Screenshot
+### App Screenshot
+
+![image](https://github.com/donadelicc/hospital_stay_predictor/assets/54988597/6b6a9bd2-190c-4a06-924e-c854322dc086)
 
 
 
